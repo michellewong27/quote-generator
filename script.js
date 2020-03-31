@@ -20,3 +20,18 @@ const quotes = [
         quote: 'If you want to be happy, be.'
     }
 ]
+
+// targeting ID so use #
+const quoteBtn = document.querySelector('#quoteBtn');
+const quoteAuthor = document.querySelector('#quoteAuthor');
+const quote = document.querySelector('#quote');
+
+quoteBtn.addEventListener('click', displayQuote);
+
+function displayQuote (){
+    //number wont ever exceed length of array
+        //generating random numb to grab that index from array
+    let number = Math.floor(Math.random()*quotes.length);
+    quoteAuthor.innerHTML= quotes[number].name;
+    quote.innerHTML = quotes[number].quote;
+}
